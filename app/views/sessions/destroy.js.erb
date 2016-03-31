@@ -1,0 +1,9 @@
+publisher = client.publish('/thoat',{Status:'<%= session[:user_id] %>'});
+
+publisher.callback(function() {
+	window.location = "/"
+});
+
+publisher.errback(function() {
+  alert('There was an error while posting your comment.');
+});

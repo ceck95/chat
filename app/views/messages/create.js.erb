@@ -1,0 +1,20 @@
+publisher = client.publish('/messages', {
+  message: '<%= j render @message  %>'
+});
+
+publisher.callback(function() {
+	  var t = $('#bb .answer');
+  // console.log('...',$('#bb').scrollTop(t.length * $(t).first().height() + 50))
+  // var t = $('#bb .answer');
+  $('#bb').scrollTop(t.length * $(t).first().height() + 50);
+  // console.log('....',t.length * $(t).first().height() + 50)
+  $('#message_body').val('');
+  $('#message_body').attr('disabled',false);
+  $('.send-btn').html('Send')
+  $('#message_body').focus();
+  $('#new_message').find("input[type='submit']").val('Submit').prop('disabled', false)
+});
+
+publisher.errback(function() {
+  alert('There was an error while posting your comment.');
+});

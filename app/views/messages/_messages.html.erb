@@ -1,0 +1,25 @@
+<% @allmessage.each do |message| %>
+<% if message.user_id == session[:user_id] %>
+<div class="answer right">
+  <div class="avatar">
+    <img src="<%= message.user.avatar_url %>" alt="User name">
+    <div class="status online"></div>
+  </div>
+  <div class="name"><small><%= message.user.name %></small></div>
+  <div class="text">
+    <%= message.body %>
+  </div>
+</div>
+<% else %>
+<div class="answer left">
+  <div class="avatar">
+    <img src="<%= message.user.avatar_url %>" alt="User name">
+    <div class="status online"></div>
+  </div>
+  <div class="name"><small><%= message.user.name %></small></div>
+  <div class="text">
+    <%= message.body %>
+  </div>
+</div>
+<% end %>
+<% end %>

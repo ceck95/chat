@@ -1,0 +1,89 @@
+<% if current_user %>
+<div class="content container-fluid bootstrap snippets">
+      <div class="row row-broken">
+        <div class="col-sm-3 col-xs-12">
+          <div class="col-inside-lg decor-default chat" style="overflow: hidden; outline: none;" tabindex="5000">
+            <div class="chat-users">
+              <% @all_user.each do |user| %>
+                <div class="user" id="<%= user.id %>">
+                    <div class="avatar">
+                    <img src="<%= user.avatar_url %>" alt="<%= user.name %>">
+                    <div id= "<%= user.id %>" class="<% if user.status == true %> status online <% else %> status offline <% end %>"></div>
+                    </div>
+                    <div class="name name-cl"><%= link_to user.name,user.profile_url,target: "_blank" %></div>
+                    <div class="mood"><% if user.status == true %> Đang online <% else %> Offline <% end %></div>
+                </div>
+                <% end %>
+                
+<!--                 <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">
+                    <div class="status online"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                    <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="User name">
+                    <div class="status busy"></div>
+                    </div>
+                    <div class="name">User name</div>
+                    <div class="mood">User mood</div>
+                </div> -->
+            </div>
+          </div>
+        </div>
+        <div id="aa" class="col-sm-9 col-xs-12 chat" style="overflow: hidden; outline: none;" tabindex="5001">
+          <div id="bb" class="col-inside-lg decor-default chat">
+            <div id="c" class="chat-users chat-body">
+              <%= render partial: 'messages' %>
+            	</div>
+            </div>
+          </div>
+        </div>
+      <div class="col-sm-12 col-xs-12 col-md-12">
+         <div class="answer-add">
+                  <%= form_for @message,remote: true do |f| %>
+                  <div class="input-group">
+                      <%= text_area :message,:body ,rows: 1,placeholder: 'Type a message', class: 'form-control' %>
+                      <%= f.submit style:'display:none',id: 'submit-message' %>
+                      <span class="input-group-btn">
+                        <button class="send-btn btn btn-default" type="button">Send</button>
+                      </span>
+                  </div>
+                  <% end %>
+          </div>
+      </div>
+      </div>
+<script type="text/javascript">
+$(function(){
+    $(".chat").niceScroll();
+    <% if(session[:user_id]) %>
+    publisher = client.publish('/facebook',{Status: "<%= session[:user_id] %>"})
+    publisher.callback(function(){
+      return true;
+    });
+    publisher.errback(function(){
+      console.log("Error online");
+    });
+    <% end %>
+})
+</script>
+<div id="tcm" style="display: none"></div>
+<% else %>
+<main>
+    <div class="container">
+      <div class="component">
+        <div class="row"> 
+          <div class="col-md-12 text">Login</div> 
+        </div>
+        <%= link_to 'facebook', '/auth/facebook',class: "icon icon-mono facebook"%>
+        <a href="#" class="icon icon-mono twitter">twitter</a>
+        <a href="#" class="icon icon-mono googleplus">google+</a>
+        <a href="#" class="icon icon-mono github">github</a>
+        <a href="#" class="icon icon-mono rss">rss</a>
+      </div>
+    </div>
+</main>
+<% end %>

@@ -1,0 +1,8 @@
+
+publisher = client.publish('/facebook',{Status: "Online"})
+publisher.callback(function(){
+	alert('callback');
+});
+publisher.errback(function(){
+	alert('Error');
+});
