@@ -9,17 +9,17 @@ client.addExtension({
 });
 $(document).ready(function(){
 
-  var session_user = $('#session_user').text();
-  if(session_user != ''){
+  // var session_user = $('#session_user').text();
+  // if(session_user != ''){
 
-   var date = new Date();
-   var minutes = 1;
-   date.setTime(date.getTime() + (minutes * 60 * 1000));
-   cookie_user = $.cookie(session_user, "online", { expires: date });
-   setInterval(function(){if(cookie_user == null){
+  //  var date = new Date();
+  //  var minutes = 1;
+  //  date.setTime(date.getTime() + (minutes * 60 * 1000));
+  //  cookie_user = $.cookie(session_user, "online", { expires: date });
+  //  setInterval(function(){if(cookie_user == null){
     // alert('offline')
-   }
-   if($.cookie(session_user)){
+   // }
+   // if($.cookie(session_user)){
   //   $.ajax({
   //   type: "GET", // or GET
   //   url: "/online",
@@ -27,7 +27,7 @@ $(document).ready(function(){
   //    alert(data.messages)
   //   }
   // });
-   }},2000)
+   // }},2000)
    // if(cookie_user == null){
    //  alert('offline')
    // }
@@ -38,7 +38,7 @@ $(document).ready(function(){
     //     $('#'+session_user).removeClass('online')
     //     $('#'+session_user).addClass('offline')
     // }, 3000)
-    }
+    // }
   var t = $('#bb .answer');
   $('#bb').scrollTop(t.length * $(t).first().height() + 50);
   $('.send-btn').click(function(){
