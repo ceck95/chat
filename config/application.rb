@@ -2,7 +2,6 @@ require File.expand_path('../boot', __FILE__)
 require File.expand_path('../csrf_protection', __FILE__)
 
 require 'rails/all'
-require 'faye/websocket'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
