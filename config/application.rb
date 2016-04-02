@@ -25,6 +25,8 @@ module Chat
     config.active_record.raise_in_transactional_callbacks = true
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
+    Faye::WebSocket.load_adapter('thin')
+    faye_server.listen(80)
 
     if Rails.env.development?
       config.before_configuration do
