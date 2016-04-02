@@ -24,19 +24,16 @@ module Chat
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.middleware.delete Rack::Lock
-    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
-    # if defined?(PhusionPassenger)
-    #   PhusionPassenger.advertised_concurrency_level = 0
-    # end
+    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 45
 
-    if Rails.env.development?
-      config.before_configuration do
-        env_file = File.join(Rails.root, 'config', 'local_env.yml')
-        YAML.load(File.open(env_file)).each do |key, value|
-          ENV[key.to_s] = value
-        end if File.exists?(env_file)
-      end
-    end
+    # if Rails.env.development?
+    #   config.before_configuration do
+    #     env_file = File.join(Rails.root, 'config', 'local_env.yml')
+    #     YAML.load(File.open(env_file)).each do |key, value|
+    #       ENV[key.to_s] = value
+    #     end if File.exists?(env_file)
+    #   end
+    # end
     # app = lambda do |env|
     #   if env['PATH_INFO'] == '/faye'
     #     ws = Faye::WebSocket.new(env)
@@ -63,8 +60,8 @@ module Chat
     # end
 
     # See https://www.phusionpassenger.com/library/config/tuning_sse_and_websockets/
-    if defined?(PhusionPassenger)
-      PhusionPassenger.advertised_concurrency_level = 0
-    end
+    # if defined?(PhusionPassenger)
+    #   PhusionPassenger.advertised_concurrency_level = 0
+    # end
   end
 end

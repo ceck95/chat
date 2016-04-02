@@ -50,10 +50,10 @@ group :development do
 end
 group :production do
   gem 'rails_12factor'
-  gem 'therubyracer',  platforms: :ruby
-  gem 'faye-websocket'
-  gem 'rack'
-  gem 'passenger', :require => false
+  # gem 'therubyracer',  platforms: :ruby
+  # gem 'faye-websocket'
+  # gem 'rack'
+  # gem 'passenger', :require => false
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
