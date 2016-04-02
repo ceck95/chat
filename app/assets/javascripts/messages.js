@@ -42,18 +42,18 @@ $(document).ready(function(){
   var t = $('#bb .answer');
   $('#bb').scrollTop(t.length * $(t).first().height() + 50);
   $('.send-btn').click(function(){
-    var kt_ms = $('#message_body').val()
-    var kt2_ms = kt_ms.trim()
+    var kt_ms = $('#message_body').val();
+    var kt2_ms = kt_ms.trim();
     if(kt2_ms == '')
     {
-        return false
+        return false;
     }
     else{
         $(document).ready(function(){
             $('#tcm').html('b')
             $('#submit-message').click();
-            $('#message_body').attr('disabled',true)
-            $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />')
+            $('#message_body').attr('disabled',true);
+            $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />');
             var t = $('#bb .answer');
             $('#bb').scrollTop(t.length * $(t).first().height() + 50);
             // clearTimeout(autoLogout);
@@ -65,17 +65,17 @@ $(document).ready(function(){
     } 
   });
     $(document).keypress(function(e){
-    var kt_ms = $('#message_body').val()
-    var kt2_ms = kt_ms.trim()
+    var kt_ms = $('#message_body').val();
+    var kt2_ms = kt_ms.trim();
           if(e.which == 13){
             if(kt2_ms == '' && e.which == 13){
               return false;
           }
           else{
-              $('#tcm').html('b')
+              $('#tcm').html('b');
               $('#submit-message').click();
-              $('#message_body').attr('disabled',true)
-              $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />')
+              $('#message_body').attr('disabled',true);
+              $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />');
             //   clearTimeout(autoLogout);
             //   autoLogout = setTimeout(function (){ 
             // $('#'+session_user).removeClass('online')
@@ -100,11 +100,11 @@ $(function() {
         var testcm = $('#tcm').text();
         $('.chat-body').append(payload.message);
         if(testcm == 'b'){
-          $('#bb .answer').last().addClass('right')
-          $('#tcm').empty()
+          $('#bb .answer').last().addClass('right');
+          $('#tcm').empty();
         }
         else
-          $('#bb .answer').last().addClass('left')
+          $('#bb .answer').last().addClass('left');
         var t = $('#bb .answer');
   // console.log('...',$('#bb').scrollTop(t.length * $(t).first().height() + 50))
   // var t = $('#bb .answer');
@@ -140,16 +140,16 @@ $(function(){
     client.unsubscribe('/facebook');
   }catch (error) {
     if(typeof console !== "undefinded" && console !== null)
-      console.log("Can't unsubscribe")
+      console.log("Can't unsubscribe");
   }
   return client.subscribe('/facebook',function(payload){
     if(payload.Status){
-      $('#'+payload.Status+' .mood').html('Đang online')
-      $('#'+payload.Status+' .status').removeClass('offline')
-      $('#'+payload.Status+' .status').addClass('online')
+      $('#'+payload.Status+' .mood').html('Đang online');
+      $('#'+payload.Status+' .status').removeClass('offline');
+      $('#'+payload.Status+' .status').addClass('online');
     }
     else{
-      console.log('Error!!!')
+      console.log('Error!!!');
     }
   });
 });
