@@ -26,7 +26,7 @@ module Chat
     config.middleware.delete Rack::Lock
     faye_server = Faye::RackAdapter.new(:mount => '/faye', :timeout => 45)
     Faye::WebSocket.load_adapter('thin')
-    faye_server.listen(80)
+    faye_server.listen('80')
 
     if Rails.env.development?
       config.before_configuration do
