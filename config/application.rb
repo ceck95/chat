@@ -60,7 +60,7 @@ module Chat
     #   else
     #     [404, { "Content-Type" => "text/plain" }, ["Not found"]]
     #   end
-    end
+    # end
 
     # See https://www.phusionpassenger.com/library/config/tuning_sse_and_websockets/
     if defined?(PhusionPassenger)
