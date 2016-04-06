@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -36,7 +36,7 @@ gem 'faye-rails'
 gem 'thin'
 # gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
-gem "font-awesome-rails"
+gem "font-awesome-rails"  
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -48,12 +48,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-group :production do
-  # gem 'rails_12factor'
-  # gem 'therubyracer',  platforms: :ruby
-  # gem 'faye-websocket'
-  # gem 'rack'
-  # gem 'passenger', :require => false
-end
+# group :production do
+#   gem 'rails_12factor'
+#   gem 'therubyracer',  platforms: :ruby
+#   gem 'faye-websocket'
+#   gem 'rack'
+#   gem 'passenger', :require => false
+# end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
