@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-facebook'
 gem 'faye-rails'
 gem 'thin'
-gem 'jquery-turbolinks'
+# gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 group :development, :test do
@@ -49,11 +49,11 @@ group :development do
   gem 'spring'
 end
 group :production do
-  gem 'rails_12factor'
-  gem 'therubyracer',  platforms: :ruby
+  # gem 'rails_12factor'
+  # gem 'therubyracer',  platforms: :ruby
   # gem 'faye-websocket'
   # gem 'rack'
   # gem 'passenger', :require => false
 end
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
