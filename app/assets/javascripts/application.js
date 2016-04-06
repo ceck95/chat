@@ -14,7 +14,6 @@
 //= require js.cookie.min
 //= require jquery_ujs
 //= require bootstrap
-//= require jquery.turbolinks
 //= require turbolinks
 //= require faye
 //= require messages
