@@ -8,39 +8,10 @@ client.addExtension({
   }
 });
 $(document).ready(function(){
-
-  // var session_user = $('#session_user').text();
-  // if(session_user != ''){
-
-  //  var date = new Date();
-  //  var minutes = 1;
-  //  date.setTime(date.getTime() + (minutes * 60 * 1000));
-  //  cookie_user = $.cookie(session_user, "online", { expires: date });
-  //  setInterval(function(){if(cookie_user == null){
-    // alert('offline')
-   // }
-   // if($.cookie(session_user)){
-  //   $.ajax({
-  //   type: "GET", // or GET
-  //   url: "/online",
-  //   success: function(data){
-  //    alert(data.messages)
-  //   }
-  // });
-   // }},2000)
-   // if(cookie_user == null){
-   //  alert('offline')
-   // }
-   // if($.cookie(session_user)){
-   //  alert('online')
-   // }
-    // autoLogout = setTimeout(function (){ 
-    //     $('#'+session_user).removeClass('online')
-    //     $('#'+session_user).addClass('offline')
-    // }, 3000)
-    // }
+  //auto scroll
   var t = $('#bb .answer');
   $('#bb').scrollTop(t.length * $(t).first().height() + 50);
+  //click
   $('.send-btn').click(function(){
     var kt_ms = $('#message_body').val();
     var kt2_ms = kt_ms.trim();
@@ -56,14 +27,10 @@ $(document).ready(function(){
             $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />');
             var t = $('#bb .answer');
             $('#bb').scrollTop(t.length * $(t).first().height() + 50);
-            // clearTimeout(autoLogout);
-            // autoLogout = setTimeout(function (){ 
-            // $('#'+session_user).removeClass('online')
-            // $('#'+session_user).addClass('offline')
-            // }, 3000)
         });
     } 
   });
+  //enter
     $(document).keypress(function(e){
     var kt_ms = $('#message_body').val();
     var kt2_ms = kt_ms.trim();
@@ -76,14 +43,10 @@ $(document).ready(function(){
               $('#submit-message').click();
               $('#message_body').attr('disabled',true);
               $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />');
-            //   clearTimeout(autoLogout);
-            //   autoLogout = setTimeout(function (){ 
-            // $('#'+session_user).removeClass('online')
-            // $('#'+session_user).addClass('offline')
-            // }, 3000)
             }
     }
    });
+  //end
 });
 $(function() {
   var error;
@@ -106,16 +69,11 @@ $(function() {
         else
           $('#bb .answer').last().addClass('left');
         var t = $('#bb .answer');
-  // console.log('...',$('#bb').scrollTop(t.length * $(t).first().height() + 50))
-  // var t = $('#bb .answer');
-  $('#bb').scrollTop(t.length * $(t).first().height() + 50);
+        $('#bb').scrollTop(t.length * $(t).first().height() + 50);
       }
       return nhut();
     }
   });
-});
-$(function(){
-  var error;
   try{
     client.unsubscribe('/thoat');
   }catch(error){
@@ -133,9 +91,6 @@ $(function(){
       console.log('Error!!!');
     }
   });
-});
-$(function(){
-  var error;
   try{
     client.unsubscribe('/facebook');
   }catch (error) {
