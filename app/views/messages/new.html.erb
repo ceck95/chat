@@ -3,17 +3,8 @@
       <div class="row row-broken">
         <div class="col-sm-3 col-xs-12">
           <div class="col-inside-lg decor-default chat" style="overflow: hidden; outline: none;" tabindex="5000">
-            <div class="chat-users">
-              <% @all_user.each do |user| %>
-                <div class="user" id="<%= user.id %>">
-                    <div class="avatar">
-                    <img src="<%= user.avatar_url %>" alt="<%= user.name %>">
-                    <div id= "<%= user.id %>" class="<% if user.status == true %> status online <% else %> status offline <% end %>"></div>
-                    </div>
-                    <div class="name name-cl"><%= link_to user.name,user.profile_url,target: "_blank" %></div>
-                    <div class="mood"><% if user.status == true %> Đang online <% else %> Offline <% end %></div>
-                </div>
-                <% end %>
+            <div class="chat-users" id = "users">
+            <%= render 'users' %>
                 
 <!--                 <div class="user">
                     <div class="avatar">
@@ -55,7 +46,7 @@
                   <% end %>
                   <%= subscribe_to "/messages" %>
                   <%= subscribe_to "/thoat" %>
-                  <%= subscribe_to "/facebook" %>
+                  <%= subscribe_to "/auth/facebook" %>
           </div>
       </div>
       </div>
@@ -71,10 +62,17 @@ $(function(){
     //   console.log("Error online");
     // });
     // <% end %>
-    <% publish_to "/facebook" do %>
-      $('#<%= session[:user_id] %> .mood').html('Online');
-      $('#<%= session[:user_id] %> .status').removeClass('offline');
-      $('#<%= session[:user_id] %> .status').addClass('online');
+    <% publish_to "/auth/facebook" do %>
+      if($('.user').attr('id') == <%=  session[:user_id] %>) {
+
+        $('#<%= session[:user_id] %> .mood').html('Online');
+        $('#<%= session[:user_id] %> .status').removeClass('offline');
+        $('#<%= session[:user_id] %> .status').addClass('online');
+
+      }
+      else{
+          $('#users').prepend('<%= j render 'user' %>')
+        }
     <% end %>
 })
 </script>

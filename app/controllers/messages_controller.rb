@@ -18,6 +18,9 @@ class MessagesController < ApplicationController
     @messages = Message.order('created_at ASC')
     @allmessage = Message.order('created_at ASC')
     @all_user = User.order('id DESC')
+    if current_user
+      @user = User.find(session[:user_id])
+    end
   end
 
   # GET /messages/1/edit

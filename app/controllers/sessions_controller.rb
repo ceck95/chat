@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 		session[:user_id] = user.id
 		flash[:success] = "Chào bạn, #{user.name}"
 		redirect_to root_url
-end
+	end
 	def destroy
 		user = User.find(session[:user_id])
 		# user.update_attribute(:status, false)
