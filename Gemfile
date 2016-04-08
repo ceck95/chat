@@ -32,11 +32,12 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'omniauth-facebook'
-gem 'faye-rails'
+# gem 'faye-rails'
 gem 'thin'
 # gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"  
+gem "private_pub"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

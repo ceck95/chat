@@ -1,9 +1,15 @@
-publisher = client.publish('/thoat',{Status:'<%= session[:user_id] %>'});
+// publisher = client.publish('/thoat',{Status:'<%= session[:user_id] %>'});
 
-publisher.callback(function() {
-	window.location = "/"
-});
+// publisher.callback(function() {
+	// window.location = "/"
+// });
 
-publisher.errback(function() {
-  alert('There was an error while posting your comment.');
-});
+// publisher.errback(function() {
+//   alert('There was an error while posting your comment.');
+// });
+<% publish_to "/thoat" do %>
+	$('#<%= session[:user_id] %> .mood').html('Offline');
+	$('#<%= session[:user_id] %> .status').removeClass('online');
+	$('#<%= session[:user_id] %> .status').addClass('offline');
+<% end %>
+window.location = "/"

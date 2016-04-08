@@ -1,0 +1,10 @@
+development:
+  server: "http://localhost:9292/faye"
+  secret_token: "secret"
+test:
+  server: "http://localhost:9292/faye"
+  secret_token: "secret"
+production:
+  server: "http://nhutuit.com/faye"
+  secret_token: "aed15af5fde5ef32ad1ed48ffdf48e0bb2fc921863240078b8c902b31d4b837a"
+  signature_expiration: 3600 # one hour

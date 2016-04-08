@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-require File.expand_path('../csrf_protection', __FILE__)
+# require File.expand_path('../csrf_protection', __FILE__)
 
 require 'rails/all'
 
@@ -22,9 +22,9 @@ module Chat
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    # config.active_record.raise_in_transactional_callbacks = true
-    config.middleware.delete Rack::Lock
-    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 45
+    config.active_record.raise_in_transactional_callbacks = true
+    # config.middleware.delete Rack::Lock
+    # config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 45
 
     # if Rails.env.development?
     #   config.before_configuration do

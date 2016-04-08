@@ -53,20 +53,28 @@
                       </span>
                   </div>
                   <% end %>
+                  <%= subscribe_to "/messages" %>
+                  <%= subscribe_to "/thoat" %>
+                  <%= subscribe_to "/facebook" %>
           </div>
       </div>
       </div>
 <script type="text/javascript">
 $(function(){
     $(".chat").niceScroll();
-    <% if(session[:user_id]) %>
-    publisher = client.publish('/facebook',{Status: "<%= session[:user_id] %>"})
-    publisher.callback(function(){
-      return true;
-    });
-    publisher.errback(function(){
-      console.log("Error online");
-    });
+    // <% if(session[:user_id]) %>
+    // publisher = client.publish('/facebook',{Status: "<%= session[:user_id] %>"})
+    // publisher.callback(function(){
+    //   return true;
+    // });
+    // publisher.errback(function(){
+    //   console.log("Error online");
+    // });
+    // <% end %>
+    <% publish_to "/facebook" do %>
+      $('#<%= session[:user_id] %> .mood').html('Online');
+      $('#<%= session[:user_id] %> .status').removeClass('offline');
+      $('#<%= session[:user_id] %> .status').addClass('online');
     <% end %>
 })
 </script>

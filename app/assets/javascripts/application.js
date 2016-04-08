@@ -13,8 +13,8 @@
 //= require jquery
 //= require js.cookie.min
 //= require jquery_ujs
+//= require private_pub
 //= require bootstrap
 //= require turbolinks
-//= require faye
 //= require messages
 //= require jquery.nicescroll.min

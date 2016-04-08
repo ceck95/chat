@@ -1,0 +1,110 @@
+// window.client = new Faye.Client('/faye');
+
+// client.addExtension({
+//   outgoing: function(message, callback) {
+//     message.ext = message.ext || {};
+//     message.ext.csrfToken = $('meta[name=csrf-token]').attr('content');
+//     return callback(message);
+//   }
+// });
+$(document).ready(function(){
+  //auto scroll
+  var t = $('#bb .answer');
+  $('#bb').scrollTop(t.length * $(t).first().height() + 50);
+  //click
+  $('.send-btn').click(function(){
+    var kt_ms = $('#message_body').val();
+    var kt2_ms = kt_ms.trim();
+    if(kt2_ms == '')
+    {
+        return false;
+    }
+    else{
+        $(document).ready(function(){
+            $('#tcm').html('b')
+            $('#submit-message').click();
+            $('#message_body').attr('disabled',true);
+            $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />');
+            var t = $('#bb .answer');
+            $('#bb').scrollTop(t.length * $(t).first().height() + 50);
+        });
+    } 
+  });
+  //enter
+    $(document).keypress(function(e){
+    var kt_ms = $('#message_body').val();
+    var kt2_ms = kt_ms.trim();
+          if(e.which == 13){
+            if(kt2_ms == '' && e.which == 13){
+              return false;
+          }
+          else{
+              $('#tcm').html('b');
+              $('#submit-message').click();
+              $('#message_body').attr('disabled',true);
+              $('.send-btn').html('<img height= "20px" width="20px" src="http://baobinhphuoc.com.vn/Content/imgs/loading.gif" />');
+            }
+    }
+   });
+  //end
+});
+// $(function() {
+//   var error;
+//   try {
+//     client.unsubscribe('/messages');
+//   } catch (error) {
+//     if (typeof console !== "undefined" && console !== null) {
+//       console.log("Can't unsubscribe.");
+//     }
+//   }
+//   return client.subscribe('/messages', function(payload) {
+//     if (payload.message) {
+//       function nhut(){
+//         var testcm = $('#tcm').text();
+//         $('.chat-body').append(payload.message);
+//         if(testcm == 'b'){
+//           $('#bb .answer').last().addClass('right');
+//           $('#tcm').empty();
+//         }
+//         else
+//           $('#bb .answer').last().addClass('left');
+//         var t = $('#bb .answer');
+//         $('#bb').scrollTop(t.length * $(t).first().height() + 50);
+//       }
+//       return nhut();
+//     }
+//   });
+  // try{
+  //   client.unsubscribe('/thoat');
+  // }catch(error){
+  //   if(typeof console !== "undefinded" && console !== null){
+  //     console.log("Can't unsubscribe");
+  //   }
+  // }
+  // return client.subscribe('/thoat',function(payload){
+  //   if(payload.Status){
+  //     $('#'+payload.Status+' .mood').html('Offline');
+  //     $('#'+payload.Status+' .status').removeClass('online');
+  //     $('#'+payload.Status+' .status').addClass('offline');
+  //   }
+  //   else{
+  //     console.log('Error!!!');
+  //   }
+  // });
+//   try{
+//     client.unsubscribe('/facebook');
+//   }catch (error) {
+//     if(typeof console !== "undefinded" && console !== null)
+//       console.log("Can't unsubscribe");
+//   }
+//   return client.subscribe('/facebook',function(payload){
+//     if(payload.Status){
+      // $('#'+payload.Status+' .mood').html('Đang online');
+      // $('#'+payload.Status+' .status').removeClass('offline');
+      // $('#'+payload.Status+' .status').addClass('online');
+//     }
+//     else{
+//       console.log('Error!!!');
+//     }
+//   });
+// });
