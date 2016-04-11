@@ -63,9 +63,10 @@ $(function(){
     // });
     // <% end %>
     <% publish_to "/auth/facebook" do %>
-      if($('.user').attr('id') == <%=  session[:user_id] %>) {
-
-        $('#<%= session[:user_id] %> .mood').html('Online');
+      if($('.user').hasClass('<%= session[:user_id] %>')) {
+        console.log($('.user').attr('id'));
+        // console.log('<%= session[:user_id] %>');
+        $('#<%= session[:user_id] %> .mood').html('Đang online');
         $('#<%= session[:user_id] %> .status').removeClass('offline');
         $('#<%= session[:user_id] %> .status').addClass('online');
 
