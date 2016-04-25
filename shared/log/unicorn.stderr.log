@@ -1,0 +1,76 @@
+I, [2016-04-11T05:17:10.793852 #13633]  INFO -- : Refreshing Gem list
+I, [2016-04-11T05:17:12.781202 #13633]  INFO -- : listening on addr=/home/nhutuit/chat/shared/sockets/unicorn.sock fd=11
+I, [2016-04-11T05:17:12.781374 #13633]  INFO -- : worker=0 spawning...
+I, [2016-04-11T05:17:12.784477 #13636]  INFO -- : worker=0 spawned pid=13636
+I, [2016-04-11T05:17:12.784670 #13633]  INFO -- : worker=1 spawning...
+I, [2016-04-11T05:17:12.784693 #13636]  INFO -- : worker=0 ready
+I, [2016-04-11T05:17:12.785973 #13633]  INFO -- : master process ready
+I, [2016-04-11T05:17:12.788599 #13639]  INFO -- : worker=1 spawned pid=13639
+I, [2016-04-11T05:17:12.788748 #13639]  INFO -- : worker=1 ready
+I, [2016-04-11T22:55:57.556499 #13633]  INFO -- : reaped #<Process::Status: pid 13636 exit 0> worker=0
+I, [2016-04-11T22:55:57.556641 #13633]  INFO -- : reaped #<Process::Status: pid 13639 exit 0> worker=1
+I, [2016-04-11T22:55:57.556730 #13633]  INFO -- : master complete
+I, [2016-04-11T22:56:55.939701 #22099]  INFO -- : Refreshing Gem list
+I, [2016-04-11T22:56:57.783719 #22099]  INFO -- : unlinking existing socket=/home/nhutuit/chat/shared/sockets/unicorn.sock
+I, [2016-04-11T22:56:57.783890 #22099]  INFO -- : listening on addr=/home/nhutuit/chat/shared/sockets/unicorn.sock fd=11
+I, [2016-04-11T22:56:57.784002 #22099]  INFO -- : worker=0 spawning...
+I, [2016-04-11T22:56:57.785950 #22099]  INFO -- : worker=1 spawning...
+I, [2016-04-11T22:56:57.786528 #22102]  INFO -- : worker=0 spawned pid=22102
+I, [2016-04-11T22:56:57.786711 #22102]  INFO -- : worker=0 ready
+I, [2016-04-11T22:56:57.787744 #22099]  INFO -- : master process ready
+I, [2016-04-11T22:56:57.788185 #22105]  INFO -- : worker=1 spawned pid=22105
+I, [2016-04-11T22:56:57.788341 #22105]  INFO -- : worker=1 ready
+I, [2016-04-12T06:02:08.532610 #22099]  INFO -- : reaped #<Process::Status: pid 22102 exit 0> worker=0
+I, [2016-04-12T06:02:08.532777 #22099]  INFO -- : reaped #<Process::Status: pid 22105 exit 0> worker=1
+I, [2016-04-12T06:02:08.532866 #22099]  INFO -- : master complete
+I, [2016-04-12T06:02:20.472762 #23895]  INFO -- : Refreshing Gem list
+I, [2016-04-12T06:02:22.363873 #23895]  INFO -- : unlinking existing socket=/home/nhutuit/chat/shared/sockets/unicorn.sock
+I, [2016-04-12T06:02:22.364049 #23895]  INFO -- : listening on addr=/home/nhutuit/chat/shared/sockets/unicorn.sock fd=11
+I, [2016-04-12T06:02:22.364166 #23895]  INFO -- : worker=0 spawning...
+I, [2016-04-12T06:02:22.366250 #23895]  INFO -- : worker=1 spawning...
+I, [2016-04-12T06:02:22.366817 #23898]  INFO -- : worker=0 spawned pid=23898
+I, [2016-04-12T06:02:22.366983 #23898]  INFO -- : worker=0 ready
+I, [2016-04-12T06:02:22.367540 #23895]  INFO -- : master process ready
+I, [2016-04-12T06:02:22.367955 #23901]  INFO -- : worker=1 spawned pid=23901
+I, [2016-04-12T06:02:22.368084 #23901]  INFO -- : worker=1 ready
+I, [2016-04-12T06:08:57.129478 #23910]  INFO -- : executing ["/home/nhutuit/.rbenv/versions/2.2.3/bin/unicorn", "-c", "config/unicorn.rb", "-E", "production", "-D", {11=>#<Kgio::UNIXServer:/home/nhutuit/chat/shared/sockets/unicorn.sock>}] (in /home/nhutuit/chat)
+I, [2016-04-12T06:08:57.129681 #23910]  INFO -- : forked child re-executing...
+I, [2016-04-12T06:08:57.474895 #23910]  INFO -- : inherited addr=/home/nhutuit/chat/shared/sockets/unicorn.sock fd=11
+I, [2016-04-12T06:08:57.475179 #23910]  INFO -- : Refreshing Gem list
+I, [2016-04-12T06:08:59.239811 #23910]  INFO -- : worker=0 spawning...
+I, [2016-04-12T06:08:59.241468 #23910]  INFO -- : worker=1 spawning...
+I, [2016-04-12T06:08:59.242081 #23914]  INFO -- : worker=0 spawned pid=23914
+I, [2016-04-12T06:08:59.242241 #23914]  INFO -- : worker=0 ready
+I, [2016-04-12T06:08:59.242954 #23910]  INFO -- : master process ready
+I, [2016-04-12T06:08:59.243479 #23917]  INFO -- : worker=1 spawned pid=23917
+I, [2016-04-12T06:08:59.243612 #23917]  INFO -- : worker=1 ready
+I, [2016-04-12T22:54:08.852633 #23910]  INFO -- : reaped #<Process::Status: pid 23914 exit 0> worker=0
+I, [2016-04-12T22:54:08.852793 #23910]  INFO -- : reaped #<Process::Status: pid 23917 exit 0> worker=1
+I, [2016-04-12T22:54:08.852871 #23910]  INFO -- : master complete
+E, [2016-04-12T22:54:08.903330 #23895] ERROR -- : reaped #<Process::Status: pid 23910 exit 0> exec()-ed
+I, [2016-04-12T22:54:11.174826 #23895]  INFO -- : reaped #<Process::Status: pid 23898 exit 0> worker=0
+I, [2016-04-12T22:54:11.175005 #23895]  INFO -- : reaped #<Process::Status: pid 23901 exit 0> worker=1
+I, [2016-04-12T22:54:11.175142 #23895]  INFO -- : master complete
+I, [2016-04-12T22:54:36.937850 #26126]  INFO -- : Refreshing Gem list
+I, [2016-04-12T22:54:38.778849 #26126]  INFO -- : unlinking existing socket=/home/nhutuit/chat/shared/sockets/unicorn.sock
+I, [2016-04-12T22:54:38.779032 #26126]  INFO -- : listening on addr=/home/nhutuit/chat/shared/sockets/unicorn.sock fd=11
+I, [2016-04-12T22:54:38.779137 #26126]  INFO -- : worker=0 spawning...
+I, [2016-04-12T22:54:38.781887 #26126]  INFO -- : worker=1 spawning...
+I, [2016-04-12T22:54:38.782402 #26129]  INFO -- : worker=0 spawned pid=26129
+I, [2016-04-12T22:54:38.782570 #26129]  INFO -- : worker=0 ready
+I, [2016-04-12T22:54:38.783083 #26126]  INFO -- : master process ready
+I, [2016-04-12T22:54:38.783477 #26132]  INFO -- : worker=1 spawned pid=26132
+I, [2016-04-12T22:54:38.783628 #26132]  INFO -- : worker=1 ready
+I, [2016-04-13T04:38:33.248172 #26126]  INFO -- : reaped #<Process::Status: pid 26129 exit 0> worker=0
+I, [2016-04-13T04:38:33.248390 #26126]  INFO -- : reaped #<Process::Status: pid 26132 exit 0> worker=1
+I, [2016-04-13T04:38:33.248500 #26126]  INFO -- : master complete
+I, [2016-04-13T04:38:45.673281 #27363]  INFO -- : Refreshing Gem list
+I, [2016-04-13T04:38:47.565216 #27363]  INFO -- : unlinking existing socket=/home/nhutuit/chat/shared/sockets/unicorn.sock
+I, [2016-04-13T04:38:47.565487 #27363]  INFO -- : listening on addr=/home/nhutuit/chat/shared/sockets/unicorn.sock fd=11
+I, [2016-04-13T04:38:47.565629 #27363]  INFO -- : worker=0 spawning...
+I, [2016-04-13T04:38:47.568591 #27363]  INFO -- : worker=1 spawning...
+I, [2016-04-13T04:38:47.569198 #27366]  INFO -- : worker=0 spawned pid=27366
+I, [2016-04-13T04:38:47.569393 #27366]  INFO -- : worker=0 ready
+I, [2016-04-13T04:38:47.571640 #27363]  INFO -- : master process ready
+I, [2016-04-13T04:38:47.572609 #27369]  INFO -- : worker=1 spawned pid=27369
+I, [2016-04-13T04:38:47.572855 #27369]  INFO -- : worker=1 ready

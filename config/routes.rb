@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   get 'thoat' , to: 'sessions#destroy',as: :thoat
   get 'offline',to: 'sessions#offline'
   get 'online',to: 'sessions#online'
-
   root 'messages#new'
 end
